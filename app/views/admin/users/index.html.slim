@@ -13,13 +13,13 @@ table.table.table-hover
         th= User.human_attribute_name(:update_at)
         th
     tbody
-        - @tasks.each do |task|
+        - @users.each do |user|
             tr
                 td = link_to user.name, [:admin, user]
                 td = user.email
-                td = iser.admin? ? 'あり' : 'なし'
-                td = task.created_at
-                td = task.updated_at
+                td = user.admin? ? 'あり' : 'なし'
+                td = user.created_at
+                td = user.updated_at
                 td = link_to '編集', edit_admin_user_path(user), class: 'btn btn-primary mr-3'
                 td = link_to '削除', [:admin, user], method: :delete, data: { confirm: "タスク「#{user.name}」を削除します。よろしいですか？"}, class: 'btn btn-danger'
 

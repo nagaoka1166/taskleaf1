@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.3'
+ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.6'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', '~> 1.3.6'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -65,8 +65,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem 'slim-rails'
-gem 'html2slim'
+gem 'html2slim', '~> 0.2.0'
 gem 'bootstrap'
 gem 'rails_autolink'
 gem 'ransack'
-gem 'slidekiq'
+gem 'sidekiq'
+group :development, :test do
+  gem "letter_opener"
+end
